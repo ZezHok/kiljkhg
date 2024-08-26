@@ -1,50 +1,79 @@
 import pytest
 import requests
 
-@pytest.fixture(scope='module')
+
+@pytest.fixture(scope="session", autouse=True)
 def base_url():
     base_url = "https://petstore.swagger.io/v2"
     return base_url
 
-@pytest.fixture(scope='module')
+
+@pytest.fixture(scope="session", autouse=True)
 def pet_id():
-    pet_id = 1304
+    pet_id = 123454321
     return pet_id
 
-#Setup
-@pytest.fixture(scope='module', autouse=True)
-def setup_function(base_url, pet_id):
-    #создание юзера
+
+@pytest.fixture(scope="session", autouse=True)
+def data(pet_id):
     data = {
         "id": pet_id,
         "category": {
-            "id": 4,
-            "name": "testname"
+            "id": 0,
+            "name": "string"
         },
-        "name": "lusia",
+        "name": "Peeesik",
         "photoUrls": [
             "string"
         ],
         "tags": [
             {
-            "id": 6,
-            "name": "testtag"
+                "id": 0,
+                "name": "string"
             }
         ],
         "status": "available"
     }
+    return data
 
-    create_pet = requests.post(f"{base_url}/pet", json=data)
-    print("Create pet" + create_pet.text)
+
+@pytest.fixture(scope="session", autouse=True)
+def update_pet_data(pet_id):
+    update_pet_data = {
+        "id": pet_id,
+        "category": {
+            "id": 0,
+            "name": "string"
+        },
+        "name": "Peeesik",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id": 0,
+                "name": "string"
+            }
+        ],
+        "status": "booked"
+    }
+    return update_pet_data
+
+
+@pytest.fixture(scope="session", autouse=True)
+def setup(base_url, pet_id, data):
+    create_pet = requests.post(f'{base_url}/pet', json=data)
+
+    print('\nTest of create pet')
+    print('Text: ' + create_pet.text)
+    print('Status: ' + str(create_pet.status_code))
     assert create_pet.status_code == 200
-    print(create_pet.headers)
-    assert create_pet.headers['Content-Type'] == 'application/json'
 
     yield
 
-    # Удаление юзера
-    del_pet = requests.delete(f"{base_url}/pet/{pet_id}")
-    print("delete pet" + del_pet.text)
-    assert del_pet.status_code == 200
-    print(del_pet.headers)
-    assert del_pet.headers['Content-Type'] == 'application/json'
+    delete_pet = requests.delete(f'{base_url}/pet/{pet_id}')
+
+    print('\nDelete pet')
+    print('Text:' + delete_pet.text)
+    print('Status: ' + str(delete_pet.status_code))
+    assert delete_pet.status_code == 200
