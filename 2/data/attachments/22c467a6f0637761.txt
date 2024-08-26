@@ -1,0 +1,6 @@
+
+Attempted upload with image size (0, 0)
+
+Upload pet image: image size & status code
+Text: {"code":200,"type":"unknown","message":"additionalMetadata: Testing with (0, 0) image\nFile uploaded to ./empty.png, 0 bytes"}
+Status: 200
