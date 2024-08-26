@@ -1,0 +1,3 @@
+second test
+delete pet{"code":200,"type":"unknown","message":"1304"}
+{'Date': 'Mon, 26 Aug 2024 10:37:28 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'}
