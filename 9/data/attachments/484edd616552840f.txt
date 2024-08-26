@@ -1,0 +1,4 @@
+
+1.1. Upload pet image: checking format of images
+Text: {"code":200,"type":"unknown","message":"additionalMetadata: Random image upload\nFile uploaded to ./tmpms2r91il.JPEG, 6548 bytes"}
+Status: 200
