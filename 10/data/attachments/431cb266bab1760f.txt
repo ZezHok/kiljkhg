@@ -1,0 +1,8 @@
+
+Test of create pet
+Text: {"id":123454321,"category":{"id":0,"name":"string"},"name":"Peeesik","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+Status: 200
+
+1.1. Upload pet image: checking format of images
+Text: {"code":200,"type":"unknown","message":"additionalMetadata: Random image upload\nFile uploaded to ./tmp08pizjx5.PNG, 23070 bytes"}
+Status: 200

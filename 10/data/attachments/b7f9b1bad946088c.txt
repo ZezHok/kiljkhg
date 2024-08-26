@@ -1,0 +1,6 @@
+
+Upload pet image with size (512, 1024)
+
+Upload pet image: image size & status code
+Text: {"code":200,"type":"unknown","message":"additionalMetadata: Random image upload\nFile uploaded to ./tmpz4hvd4tv.png, 324477 bytes"}
+Status: 200
