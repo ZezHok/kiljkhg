@@ -1,0 +1,6 @@
+Create pet{"id":1304,"category":{"id":4,"name":"testname"},"name":"lusia","photoUrls":["string"],"tags":[{"id":6,"name":"testtag"}],"status":"available"}
+{'Date': 'Mon, 26 Aug 2024 10:37:12 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'}
+
+1.1. Upload pet image: checking format of images
+Text: {"code":200,"type":"unknown","message":"additionalMetadata: Random image upload\nFile uploaded to ./tmpgvry21k1.PNG, 5422 bytes"}
+Status: 200
